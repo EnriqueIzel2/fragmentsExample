@@ -1,11 +1,12 @@
-package com.example.fragmentsexample.adapter
+package com.example.fragmentsexample.fragments.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fragmentsexample.databinding.ListItemBinding
+import com.example.fragmentsexample.model.Car
 
-class CarAdapter : RecyclerView.Adapter<CarAdapter.ViewHolder>() {
+class CarAdapter(private val items: List<Car>) : RecyclerView.Adapter<CarAdapter.ViewHolder>() {
 
   inner class ViewHolder(private val binding: ListItemBinding) :
     RecyclerView.ViewHolder(binding.root) {
@@ -19,11 +20,9 @@ class CarAdapter : RecyclerView.Adapter<CarAdapter.ViewHolder>() {
     return ViewHolder(binding)
   }
 
-  override fun getItemCount(): Int {
-    TODO("Not yet implemented")
-  }
-
   override fun onBindViewHolder(holder: ViewHolder, position: Int) {
     TODO("Not yet implemented")
   }
+
+  override fun getItemCount(): Int = items.size
 }
