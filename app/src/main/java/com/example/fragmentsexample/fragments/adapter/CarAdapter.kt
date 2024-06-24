@@ -25,4 +25,6 @@ class CarAdapter(private val items: List<Car>) : RecyclerView.Adapter<CarAdapter
   }
 
   override fun getItemCount(): Int = items.size
+
+  private fun getItem(position: Int) = items[position]
 }
