@@ -20,7 +20,7 @@
         tools:text="Corsa" />
 
     <TextView
-        android:id="@+id/textView_brande"
+        android:id="@+id/textView_brand"
         style="@style/TextAppearance.AppCompat.Medium"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -31,4 +31,16 @@
         app:layout_constraintStart_toStartOf="@+id/textView_name"
         app:layout_constraintTop_toBottomOf="@+id/textView_name"
         tools:text="Chevrolet" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="@id/textView_name"
+        app:layout_constraintStart_toStartOf="@id/textView_name"
+        app:layout_constraintTop_toBottomOf="@id/textView_brand"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="78dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
