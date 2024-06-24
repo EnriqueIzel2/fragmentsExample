@@ -11,6 +11,10 @@ class CarAdapter(private val items: List<Car>) : RecyclerView.Adapter<CarAdapter
   inner class ViewHolder(private val binding: ListItemBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
+    fun bind(item: Car) {
+      binding.textViewName.text = item.name
+      binding.textViewBrand.text = item.brand
+    }
   }
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -21,7 +25,9 @@ class CarAdapter(private val items: List<Car>) : RecyclerView.Adapter<CarAdapter
   }
 
   override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-    TODO("Not yet implemented")
+    val item = getItem(position)
+
+    holder.bind(item)
   }
 
   override fun getItemCount(): Int = items.size
