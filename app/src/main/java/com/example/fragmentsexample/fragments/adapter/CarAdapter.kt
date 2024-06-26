@@ -6,7 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.fragmentsexample.databinding.ListItemBinding
 import com.example.fragmentsexample.model.Car
 
-class CarAdapter(private val items: List<Car>) : RecyclerView.Adapter<CarAdapter.ViewHolder>() {
+class CarAdapter(private val items: List<Car>,
+  private val onClick: (Car) -> Unit) : RecyclerView.Adapter<CarAdapter.ViewHolder>() {
 
   inner class ViewHolder(private val binding: ListItemBinding) :
     RecyclerView.ViewHolder(binding.root) {
@@ -14,6 +15,10 @@ class CarAdapter(private val items: List<Car>) : RecyclerView.Adapter<CarAdapter
     fun bind(item: Car) {
       binding.textViewName.text = item.name
       binding.textViewBrand.text = item.brand
+
+      itemView.setOnClickListener {
+        onClick.invoke(item)
+      }
     }
   }
 
